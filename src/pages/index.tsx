@@ -1,10 +1,13 @@
 import type { NextPage } from 'next';
-import { Box } from '../components/Box/Box';
+import { Row } from '../components/Row/Row';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Box number={1} color="yellow" variant="default" />
+    <div className="container mx-auto">
+      <Row color="red" />
+      <Row color="yellow" />
+      <Row color="green" inverted />
+      <Row color="blue" inverted />
     </div>
   );
 };
