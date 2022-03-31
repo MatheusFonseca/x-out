@@ -39,10 +39,10 @@ const Home: NextPage = () => {
           </div>
         </Button>
       </div>
-      <Row color="red" />
-      <Row color="yellow" />
-      <Row color="green" inverted />
-      <Row color="blue" inverted />
+      <Row id="row1" color="red" />
+      <Row id="row2" color="yellow" />
+      <Row id="row3" color="green" />
+      <Row id="row4" color="blue" />
     </div>
   );
 };

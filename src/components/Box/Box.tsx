@@ -3,13 +3,19 @@ import Image from 'next/image';
 import xImage from '../../../public/x.png';
 import { boxStyles } from './Box.styles';
 import { IColor } from '../../interfaces/IColor';
-interface BoxProps {
-  number: number;
+
+export interface IBox {
+  value: number;
+  state: 'default' | 'markedOff' | 'playedDown' | 'disabled';
+}
+
+export interface BoxProps {
+  value: number;
   color: IColor;
   variant?: 'default' | 'markedOff' | 'playedDown' | 'disabled';
 }
 
-export const Box = ({ number, variant = 'default', color }: BoxProps) => {
+export const Box = ({ value, variant = 'default', color }: BoxProps) => {
   return (
     <div
       className={`w-[106px] h-[122px] pb-4 select-none rounded-2xl ${
@@ -31,7 +37,7 @@ export const Box = ({ number, variant = 'default', color }: BoxProps) => {
           <p
             className={`text-[84px] leading-none font-bold ${boxStyles.number[variant][color]}`}
           >
-            {number}
+            {value}
           </p>
         )}
       </div>
