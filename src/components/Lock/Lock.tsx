@@ -13,12 +13,12 @@ const lockStyles = {
 };
 
 const disableStyles =
-  'relative after:absolute after:w-full after:bg-gray after:h-full after:rounded-[53px] after:top-0 after:bg-[rgb(0,0,0,0.25)] bg-white shadow-lg';
+  'relative after:absolute after:w-full after:bg-gray after:h-full after:rounded-[58px] after:top-0 after:bg-[rgb(0,0,0,0.25)] bg-white shadow-lg';
 
 export const Lock = ({ color, variant = 'default' }: LockProps) => {
   return (
     <div
-      className={`w-[106px] h-[106px] flex items-center justify-center rounded-[53px] bg-white shadow-lg pb-1.5 ${
+      className={`w-[116px] h-[116px] flex items-center justify-center rounded-[58px] bg-white shadow-lg pb-1.5 ${
         variant !== 'default' && disableStyles
       }`}
     >

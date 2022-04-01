@@ -1,12 +1,17 @@
 import type { NextPage } from 'next';
+import { useContext } from 'react';
 import { Button } from '../components/Button/Button';
 import { Dice } from '../components/Dice/Dice';
 import { Row } from '../components/Row/Row';
+import { SheetContext } from '../contexts/Sheet/Sheet.context';
+import { calculateFinalScore } from '../utils/CalculateScore';
 
 const Home: NextPage = () => {
+  const { sheet } = useContext(SheetContext);
+
   return (
     <div className="container mx-auto">
-      <div className="flex flex-row justify-between items-center p-2">
+      <div className="flex flex-row justify-between items-center py-2">
         <Button size="lg">
           <p className="text-6xl text-white font-bold uppercase m-7 select-none">
             READY
@@ -30,10 +35,10 @@ const Home: NextPage = () => {
         <Dice color="blue" number={6} />
         <Button size="lg">
           <div className="py-4 px-20">
-            <p className="text-6xl text-white font-bold uppercase select-none">
-              107
+            <p className="text-6xl text-white text-center font-bold uppercase select-none">
+              {calculateFinalScore(sheet)}
             </p>
-            <p className="text-3xl text-white font-thin uppercase select-none">
+            <p className="text-3xl text-white text-center font-thin uppercase select-none">
               score
             </p>
           </div>

@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useReducer } from 'react';
-import { IBox } from '../../components/Box/Box';
+import { IBox } from '../../interfaces/IBox';
 import { IColor } from '../../interfaces/IColor';
 import { ISheet } from '../../interfaces/ISheet';
 import { SheetAction, sheetReducer } from './Sheet.reducer';
@@ -10,7 +10,7 @@ interface IProviderProps {
 
 const generateInitialValue = (color: IColor) => {
   const initialBoxesState: IBox[] = [];
-  for (let i = 1; i <= 12; i++) {
+  for (let i = 2; i <= 12; i++) {
     initialBoxesState.push({ state: 'default', value: i });
   }
   if (color === 'green' || color === 'blue') {

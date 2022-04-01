@@ -1,4 +1,4 @@
-import { IRow } from '../components/Row/Row';
+import { IRow } from './IRow';
 
 export interface ISheet {
   row1: IRow;

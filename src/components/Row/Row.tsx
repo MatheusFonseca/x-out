@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { SheetContext } from '../../contexts/Sheet/Sheet.context';
 import { IColor } from '../../interfaces/IColor';
 import { ISheet } from '../../interfaces/ISheet';
-import { Box, IBox } from '../Box/Box';
+import { Box } from '../Box/Box';
 import { Lock } from '../Lock/Lock';
 
 const rowStyles = {
@@ -11,11 +11,6 @@ const rowStyles = {
   green: 'bg-green',
   blue: 'bg-blue',
 };
-
-export interface IRow {
-  boxes: IBox[];
-  color: IColor;
-}
 
 interface RowProps {
   color: IColor;
@@ -45,7 +40,10 @@ export const Row = ({ color, id }: RowProps) => {
         );
       })}
 
-      <Lock color={color} variant="default" />
+      <Lock
+        color={color}
+        variant={sheet[id].boxes[sheet[id].boxes.length - 1].state}
+      />
     </div>
   );
 };
