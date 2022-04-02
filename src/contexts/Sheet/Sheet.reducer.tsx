@@ -1,4 +1,4 @@
-import { IBox } from '../../components/Box/Box';
+import { IBox } from '../../interfaces/IBox';
 import { ISheet } from '../../interfaces/ISheet';
 
 export const markNumber = (target: number, rowState: IBox[]): IBox[] => {
