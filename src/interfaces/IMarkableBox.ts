@@ -1,6 +1,6 @@
 import { IColor } from './IColor';
 
-export interface IDie {
+export interface IMarkableBox {
   value: number;
-  color: IColor | 'white';
+  color: IColor;
 }

@@ -1,7 +1,7 @@
 import { IColor } from '../interfaces/IColor';
-import { IDie } from '../interfaces/IDie';
+import { IDice } from '../interfaces/IDice';
 
-export const rollDice = (): IDie[] => {
+export const rollDice = (): IDice => {
   const generateRandomInt = () => Math.floor(Math.random() * 6) + 1;
   const colors: (IColor | 'white')[] = [
     'white',
@@ -15,5 +15,5 @@ export const rollDice = (): IDie[] => {
   return colors.map(color => ({
     color,
     value: generateRandomInt(),
-  }));
+  })) as IDice;
 };

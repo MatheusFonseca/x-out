@@ -1,23 +1,22 @@
 import React, { createContext, ReactNode, useState } from 'react';
-import { IDie } from '../../interfaces/IDie';
-import { rollDice } from '../../utils/RollDice';
+import { IDice } from '../../interfaces/IDice';
 
 interface IProviderProps {
   children: ReactNode | ReactNode[];
 }
 
 interface IDiceContext {
-  dice: IDie[];
-  setDice: React.Dispatch<React.SetStateAction<IDie[]>>;
+  dice: IDice;
+  setDice: React.Dispatch<React.SetStateAction<IDice>>;
 }
 
 export const DiceContext = createContext<IDiceContext>({
-  dice: [],
+  dice: undefined as any,
   setDice: () => [],
 });
 
 export const DiceContextProvider = ({ children }: IProviderProps) => {
-  const [dice, setDice] = useState<IDie[]>(rollDice());
+  const [dice, setDice] = useState<IDice>(undefined as any);
 
   return (
     <DiceContext.Provider

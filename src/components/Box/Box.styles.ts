@@ -16,10 +16,10 @@ export const boxStyles = {
       blue: 'bg-white shadow-lg',
     },
     playedDown: {
-      red: 'bg-red',
-      yellow: 'bg-yellow',
-      green: 'bg-green',
-      blue: 'bg-blue',
+      red: 'bg-red-dark',
+      yellow: 'bg-yellow-dark',
+      green: 'bg-green-dark',
+      blue: 'bg-blue-dark',
     },
     disabled: {
       red: disabledBgStyle,
