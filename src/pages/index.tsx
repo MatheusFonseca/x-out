@@ -2,10 +2,12 @@ import type { GetServerSideProps, NextPage } from 'next';
 import { useContext, useEffect, useState } from 'react';
 import { Button } from '../components/Button/Button';
 import { Dice } from '../components/Dice/Dice';
+import { RoundCounter } from '../components/RoundCounter/RoundCounter';
 import { Row } from '../components/Row/Row';
 import { DiceContext } from '../contexts/Dice/Dice.context';
 import { SheetContext } from '../contexts/Sheet/Sheet.context';
 import { IDice } from '../interfaces/IDice';
+import { IRound } from '../interfaces/IRound';
 import { calculateFinalScore } from '../utils/CalculateScore';
 import { rollDice } from '../utils/RollDice';
 
@@ -17,6 +19,9 @@ const Home: NextPage<HomeProps> = ({ initialDice }: HomeProps) => {
   const { sheet } = useContext(SheetContext);
   const { dice, setDice } = useContext(DiceContext);
   const [isEyeOn, setIsEyeOn] = useState(false);
+  const [rounds, setRounds] = useState<IRound[]>(
+    Array.from(Array(25).fill({ status: 'available' }))
+  );
 
   useEffect(() => {
     setDice(initialDice);
@@ -65,6 +70,7 @@ const Home: NextPage<HomeProps> = ({ initialDice }: HomeProps) => {
           </div>
         </Button>
       </div>
+      <RoundCounter rounds={rounds} />
       <Row isEyeOn={isEyeOn} id="row1" color="red" />
       <Row isEyeOn={isEyeOn} id="row2" color="yellow" />
       <Row isEyeOn={isEyeOn} id="row3" color="green" />
