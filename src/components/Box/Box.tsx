@@ -1,8 +1,7 @@
-import React from 'react';
 import Image from 'next/image';
-import xImage from '../../../public/x.png';
+import { IColor } from '@/interfaces';
+import xImage from '@/../public/x.png';
 import { boxStyles } from './Box.styles';
-import { IColor } from '../../interfaces/IColor';
 
 export interface BoxProps {
   value: number;

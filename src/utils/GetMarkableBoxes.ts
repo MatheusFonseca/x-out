@@ -1,6 +1,4 @@
-import { IColor } from '../interfaces/IColor';
-import { IDice } from '../interfaces/IDice';
-import { IMarkableBox } from '../interfaces/IMarkableBox';
+import { IColor, IDice, IMarkableBox } from '@/interfaces';
 
 export const getMarkableBoxes = (
   dice: IDice,

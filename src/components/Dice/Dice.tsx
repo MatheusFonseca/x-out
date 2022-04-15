@@ -1,5 +1,4 @@
-import React from 'react';
-import { IColor } from '../../interfaces/IColor';
+import { IColor } from '@/interfaces';
 
 const getDiceSvg = (number: number) => {
   const SVGs = [

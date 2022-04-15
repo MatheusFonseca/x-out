@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface LockProps {
   color: 'red' | 'yellow' | 'green' | 'blue';
   variant?: 'default' | 'markedOff' | 'disabled';

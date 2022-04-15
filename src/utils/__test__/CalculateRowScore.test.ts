@@ -1,4 +1,4 @@
-import { IRow } from '../../interfaces/IRow';
+import { IRow } from '@/interfaces';
 import { calculateRowScore } from '../CalculateScore';
 
 describe('calculateRowScore function', () => {

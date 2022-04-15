@@ -1,5 +1,4 @@
-import { IColor } from '../interfaces/IColor';
-import { IDice } from '../interfaces/IDice';
+import { IColor, IDice } from '@/interfaces';
 
 export const rollDice = (): IDice => {
   const generateRandomInt = () => Math.floor(Math.random() * 6) + 1;

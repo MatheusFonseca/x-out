@@ -1,4 +1,4 @@
-import { ISheet } from '../../interfaces/ISheet';
+import { ISheet } from '@/interfaces';
 import { calculateFinalScore } from '../CalculateScore';
 
 describe('calculateFinalScore function', () => {

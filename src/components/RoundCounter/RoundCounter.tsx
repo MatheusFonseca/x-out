@@ -1,5 +1,4 @@
-import React from 'react';
-import { IRound } from '../../interfaces/IRound';
+import { IRound } from '@/interfaces';
 
 interface RoundCounterProps {
   rounds: IRound[];

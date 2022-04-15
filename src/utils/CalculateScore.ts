@@ -1,5 +1,4 @@
-import { IRow } from '../interfaces/IRow';
-import { ISheet } from '../interfaces/ISheet';
+import { IRow, ISheet } from '@/interfaces';
 import { scoreSheet } from './ScoreSheet';
 
 export const calculateRowScore = (row: IRow): number => {

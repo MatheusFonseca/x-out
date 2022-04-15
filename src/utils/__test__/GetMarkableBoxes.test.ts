@@ -1,4 +1,4 @@
-import { IDice } from '../../interfaces/IDice';
+import { IDice } from '@/interfaces';
 import { getMarkableBoxes } from '../GetMarkableBoxes';
 
 describe('calculateRowScore function', () => {

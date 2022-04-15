@@ -1,12 +1,8 @@
-import React, { useContext } from 'react';
-import { DiceContext } from '../../contexts/Dice/Dice.context';
-import { SheetContext } from '../../contexts/Sheet/Sheet.context';
-import { IBox } from '../../interfaces/IBox';
-import { IColor } from '../../interfaces/IColor';
-import { ISheet } from '../../interfaces/ISheet';
-import { getMarkableBoxes } from '../../utils/GetMarkableBoxes';
-import { Box } from '../Box/Box';
-import { Lock } from '../Lock/Lock';
+import { IBox, IColor, IDice, ISheet } from '@/interfaces';
+import React from 'react';
+import { getMarkableBoxes } from '@/utils';
+import { Box, Lock } from '@/components';
+import { SheetAction } from '@/reducers';
 
 const rowStyles = {
   red: 'bg-red',
@@ -19,12 +15,19 @@ interface RowProps {
   color: IColor;
   id: keyof ISheet;
   isEyeOn: boolean;
+  sheet: ISheet;
+  dispatchSheet: React.Dispatch<SheetAction>;
+  dice: IDice;
 }
 
-export const Row = ({ color, id, isEyeOn }: RowProps) => {
-  const { sheet, dispatchSheet } = useContext(SheetContext);
-  const { dice } = useContext(DiceContext);
-
+export const Row = ({
+  color,
+  id,
+  dice,
+  isEyeOn,
+  sheet,
+  dispatchSheet,
+}: RowProps) => {
   const isBoxMarkable = (box: IBox): boolean => {
     if (box.state !== 'default') {
       return false;

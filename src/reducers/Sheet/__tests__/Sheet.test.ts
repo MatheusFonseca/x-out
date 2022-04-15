@@ -1,5 +1,5 @@
-import { IBox } from '../../../interfaces/IBox';
-import { markNumber } from '../Sheet.reducer';
+import { IBox } from '@/interfaces';
+import { markNumber } from '../helpers';
 
 describe('Sheet Component - markNumber function', () => {
   const rowState: IBox[] = [
